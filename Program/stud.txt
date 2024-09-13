@@ -1,0 +1,64 @@
+ .open student.db
+sqlite> create table student(id,name,seatnumber,blocknumber);
+sqlite> insert into student values(1,'om',20,1);
+sqlite> insert into student values(2,'ram',30,2);
+sqlite> insert into student values(3,'sai',40,3);
+sqlite> insert into student values(4,'mohan',55,4);
+sqlite> insert into student values(5,'manvi',60,5);
+sqlite> insert into student values(6,'rahul',66,6);
+sqlite> insert into student values(7,'sonal',76,7);
+sqlite> insert into student values(8,'prinsi',80,8);
+sqlite> insert into student values(9,'diksha',85,9);
+sqlite> insert into student values(10,'shiv',90,10);
+sqlite> select*from student;
+1|om|20|1
+2|ram|30|2
+3|sai|40|3
+4|mohan|55|4
+5|manvi|60|5
+6|rahul|66|6
+7|sonal|76|7
+8|prinsi|80|8
+9|diksha|85|9
+10|shiv|90|10
+sqlite> .modebox
+Error: unknown command or invalid arguments:  "modebox". Enter ".help" for help
+sqlite> .mode box
+sqlite> select*from student;
++----------------------------------------+
+¦ id ¦  name  ¦ seatnumber ¦ blocknumber ¦
++----+--------+------------+-------------¦
+¦ 1  ¦ om     ¦ 20         ¦ 1           ¦
+¦ 2  ¦ ram    ¦ 30         ¦ 2           ¦
+¦ 3  ¦ sai    ¦ 40         ¦ 3           ¦
+¦ 4  ¦ mohan  ¦ 55         ¦ 4           ¦
+¦ 5  ¦ manvi  ¦ 60         ¦ 5           ¦
+¦ 6  ¦ rahul  ¦ 66         ¦ 6           ¦
+¦ 7  ¦ sonal  ¦ 76         ¦ 7           ¦
+¦ 8  ¦ prinsi ¦ 80         ¦ 8           ¦
+¦ 9  ¦ diksha ¦ 85         ¦ 9           ¦
+¦ 10 ¦ shiv   ¦ 90         ¦ 10          ¦
++----------------------------------------+
+sqlite> .mode column
+sqlite> .mode csv
+sqlite> .output D:/prinsi/csv/student.csv
+sqlite> select*from student;
+from csv import reader
+f=open("D://prinsi//csv/student.csv","r")
+csv_reader=reader(f)
+for row in csv_reader:
+    print(row)
+output:-
+
+['id', 'name', 'seatnumber', 'blocknumber']
+['1', 'om', '20', '1']
+['2', 'ram', '30', '2']
+['3', 'sai', '40', '3']
+['4', 'mohan', '55', '4']
+['5', 'manvi', '60', '5']
+['6', 'rahul', '66', '6']
+['7', 'sonal', '76', '7']
+['8', 'prinsi', '80', '8']
+['9', 'diksha', '85', '9']
+['10', 'shiv', '90', '10']
+
